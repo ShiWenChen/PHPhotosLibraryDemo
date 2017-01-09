@@ -374,24 +374,22 @@ SingletonM(CSPhotos);
     for (PHAsset *asset in assets) {
         if (asset.mediaType == PHAssetMediaTypeImage) {
             NSLog(@"图片");
+            // 是否要原图
+            CGSize size = original ? CGSizeMake(asset.pixelWidth, asset.pixelHeight) : CGSizeZero;
+            
+            // 从asset中获得图片
+            [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                [self.imageArray addObject:result];
+                if (assets.count == self.imageArray.count) {
+                    [self.delegate enumerateAssetsPhoto:self.imageArray];
+                    
+                }
+            }];
         }
         if (asset.mediaType == PHAssetMediaTypeVideo) {
             NSLog(@"视频");
         }
-        // 是否要原图
-        CGSize size = original ? CGSizeMake(asset.pixelWidth, asset.pixelHeight) : CGSizeZero;
-        
-        // 从asset中获得图片
-        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-            [self.imageArray addObject:result];
-            if (assets.count == self.imageArray.count) {
-                [self.delegate enumerateAssetsPhoto:self.imageArray];
-                
-            }
-            
-            
-            
-        }];
+       
     }
 }
 -(NSMutableArray *)imageArray{
