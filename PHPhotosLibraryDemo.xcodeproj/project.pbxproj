@@ -25,6 +25,7 @@
 		848FFE1C1E23335B00682727 /* demo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 848FFE191E23335B00682727 /* demo1.png */; };
 		848FFE1D1E23335B00682727 /* demo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 848FFE1A1E23335B00682727 /* demo2.png */; };
 		848FFE1E1E23335B00682727 /* demo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 848FFE1B1E23335B00682727 /* demo3.png */; };
+		84DCA6111E288D8C007675C9 /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCA6101E288D8C007675C9 /* ImageModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		848FFE191E23335B00682727 /* demo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo1.png; sourceTree = "<group>"; };
 		848FFE1A1E23335B00682727 /* demo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo2.png; sourceTree = "<group>"; };
 		848FFE1B1E23335B00682727 /* demo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo3.png; sourceTree = "<group>"; };
+		84DCA60F1E288D8C007675C9 /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
+		84DCA6101E288D8C007675C9 /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 		848FFDD31E1FAF5F00682727 /* PHPhotosLibraryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				84DCA60E1E288D66007675C9 /* Model */,
 				848FFE021E1FAFED00682727 /* SVProgressHUD */,
 				848FFDFB1E1FAF8200682727 /* CSPhotos */,
 				848FFDD71E1FAF5F00682727 /* AppDelegate.h */,
@@ -180,6 +184,15 @@
 				848FFE1B1E23335B00682727 /* demo3.png */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		84DCA60E1E288D66007675C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84DCA60F1E288D8C007675C9 /* ImageModel.h */,
+				84DCA6101E288D8C007675C9 /* ImageModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +307,7 @@
 				848FFE0D1E1FAFED00682727 /* SVIndefiniteAnimatedView.m in Sources */,
 				848FFE011E1FAF8200682727 /* CSPhotos.m in Sources */,
 				848FFDDC1E1FAF5F00682727 /* ViewController.m in Sources */,
+				84DCA6111E288D8C007675C9 /* ImageModel.m in Sources */,
 				848FFE111E1FAFED00682727 /* SVRadialGradientLayer.m in Sources */,
 				848FFE101E1FAFED00682727 /* SVProgressHUD.m in Sources */,
 				848FFDD91E1FAF5F00682727 /* AppDelegate.m in Sources */,
@@ -436,6 +450,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Weiwei Li (HPS3NNUC52)";
 				DEVELOPMENT_TEAM = X585696T4B;
 				INFOPLIST_FILE = PHPhotosLibraryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShiWenChen.7.PHPhotosLibraryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -452,6 +467,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Weiwei Li (HPS3NNUC52)";
 				DEVELOPMENT_TEAM = X585696T4B;
 				INFOPLIST_FILE = PHPhotosLibraryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShiWenChen.7.PHPhotosLibraryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

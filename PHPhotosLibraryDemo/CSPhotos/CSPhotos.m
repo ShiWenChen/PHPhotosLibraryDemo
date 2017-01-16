@@ -9,11 +9,17 @@
 #import "CSPhotos.h"
 #import <Photos/Photos.h>
 #import "SVProgressHUD.h"
+#import "ImageModel.h"
 
 @interface CSPhotos()
 @property (nonatomic , copy) NSString *PPHAssetCollectionTitle;
 
 @property (nonatomic , strong) NSMutableArray *imageArray;
+
+/**
+ 删除测试数组
+ */
+@property (nonatomic , strong) NSMutableArray *assetArray;
 
 
 @end
@@ -27,6 +33,7 @@ SingletonM(CSPhotos);
  */
 -(void)getImageFromTitle:(NSString *)title{
     // 获得所有的自定义相簿
+    self.imageArray = nil;
     PHFetchResult<PHAssetCollection *> *assetCollections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     // 遍历所有的自定义相簿
     for (PHAssetCollection *assetCollection in assetCollections) {
@@ -383,7 +390,13 @@ SingletonM(CSPhotos);
         
         // 从asset中获得图片
         [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-            [self.imageArray addObject:result];
+            NSLog(@"%@",asset.localIdentifier);
+            ImageModel *imageModel = [[ImageModel alloc] init];
+            imageModel.image = result;
+            imageModel.asset = asset;
+            
+            ///添加照片
+            [self.imageArray addObject:imageModel];
             if (assets.count == self.imageArray.count) {
                 [self.delegate enumerateAssetsPhoto:self.imageArray];
                 
@@ -394,10 +407,34 @@ SingletonM(CSPhotos);
         }];
     }
 }
+
+
+/**
+ 删除相簿中的照片
+ 
+ @param assetArray 存放PHAsset对象的数组
+ */
+-(void)removeFromPHAsset:(NSMutableArray*)assetArray{
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        [PHAssetChangeRequest deleteAssets:assetArray];
+    } completionHandler:^(BOOL success, NSError *error) {
+        [self.delegate deletResultDelegate:success];
+        if (error) {
+            NSLog(@"Error: %@", error);
+        }
+    }];
+}
+
 -(NSMutableArray *)imageArray{
     if (!_imageArray) {
         _imageArray = [[NSMutableArray alloc] init];
     }
     return _imageArray;
+}
+-(NSMutableArray *)assetArray{
+    if (!_assetArray) {
+        _assetArray = [[NSMutableArray alloc] init];
+    }
+    return _assetArray;
 }
 @end

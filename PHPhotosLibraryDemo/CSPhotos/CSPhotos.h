@@ -12,7 +12,20 @@
 
 @protocol CSPhotoDelegate <NSObject>
 @optional
+
+/**
+ 获取图片dialing
+
+ @param array ImageModel类型的数组
+ */
 -(void)enumerateAssetsPhoto:(NSMutableArray *)array;
+
+/**
+ 删除成功代理
+
+ @param result 是否成功
+ */
+-(void)deletResultDelegate:(BOOL)result;
 
 @end
 
@@ -21,6 +34,7 @@
  *  代理
  */
 @property (nonatomic, assign) id <CSPhotoDelegate>delegate;
+
 
 SingletonH(CSPhotos);
 
@@ -44,4 +58,11 @@ SingletonH(CSPhotos);
  @param title 相簿名称
  */
 -(void)saveVideoWithUrl:(NSURL *)url adTitle:(NSString *)title;
+
+/**
+ 删除相簿中的照片
+
+ @param assetArray 存放PHAsset对象的数组
+ */
+-(void)removeFromPHAsset:(NSMutableArray*)assetArray;
 @end
