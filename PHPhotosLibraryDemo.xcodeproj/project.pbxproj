@@ -26,6 +26,7 @@
 		848FFE1D1E23335B00682727 /* demo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 848FFE1A1E23335B00682727 /* demo2.png */; };
 		848FFE1E1E23335B00682727 /* demo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 848FFE1B1E23335B00682727 /* demo3.png */; };
 		84DCA6111E288D8C007675C9 /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCA6101E288D8C007675C9 /* ImageModel.m */; };
+		84DCA6131E2C6EEC007675C9 /* demo4.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DCA6121E2C6EEC007675C9 /* demo4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		848FFE1B1E23335B00682727 /* demo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo3.png; sourceTree = "<group>"; };
 		84DCA60F1E288D8C007675C9 /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
 		84DCA6101E288D8C007675C9 /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
+		84DCA6121E2C6EEC007675C9 /* demo4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				848FFE191E23335B00682727 /* demo1.png */,
 				848FFE1A1E23335B00682727 /* demo2.png */,
 				848FFE1B1E23335B00682727 /* demo3.png */,
+				84DCA6121E2C6EEC007675C9 /* demo4.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				848FFE001E1FAF8200682727 /* 2.MOV in Resources */,
 				848FFE1D1E23335B00682727 /* demo2.png in Resources */,
 				848FFE1E1E23335B00682727 /* demo3.png in Resources */,
+				84DCA6131E2C6EEC007675C9 /* demo4.png in Resources */,
 				848FFE0F1E1FAFED00682727 /* SVProgressHUD.bundle in Resources */,
 				848FFE1C1E23335B00682727 /* demo1.png in Resources */,
 				848FFDE41E1FAF5F00682727 /* LaunchScreen.storyboard in Resources */,
